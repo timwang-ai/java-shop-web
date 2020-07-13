@@ -1,7 +1,7 @@
 package com.bgmfeng.my.shop.web.admin.web.interceptor;
 
 import com.bgmfeng.my.shop.commons.constant.ConstantUtils;
-import com.bgmfeng.my.shop.domain.User;
+import com.bgmfeng.my.shop.domain.TbUser;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -23,9 +23,9 @@ public class PermissionInterceptor implements HandlerInterceptor {
     public void postHandle(HttpServletRequest httpServletRequest, HttpServletResponse httpServletResponse, Object o, ModelAndView modelAndView) throws Exception {
         // 以login结尾的请求
         if (modelAndView.getViewName().endsWith("login")) {
-            User user = (User) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
+            TbUser tbUser = (TbUser) httpServletRequest.getSession().getAttribute(ConstantUtils.SESSION_USER);
 
-            if (user != null) {
+            if (tbUser != null) {
                 httpServletResponse.sendRedirect("/main");
             }
         }

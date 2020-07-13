@@ -1,5 +1,6 @@
 package com.bgmfeng.my.shop.web.admin.service;
 
+import com.bgmfeng.my.shop.commons.dto.BaseResult;
 import com.bgmfeng.my.shop.domain.TbUser;
 
 import java.util.List;
@@ -11,9 +12,9 @@ import java.util.List;
  */
 public interface TbUserService {
 
-    public List <TbUser> selectAll();
+    public List<TbUser> selectAll();
 
-    void insert(TbUser tbUser);
+    BaseResult save(TbUser tbUser);
 
     void delete(Long id);
 
@@ -22,4 +23,13 @@ public interface TbUserService {
     void update(TbUser tbUser);
 
     List<TbUser> selectByUsername(String username);
+
+    /**
+     * 用户登陆
+     *
+     * @param email
+     * @param password
+     * @return
+     */
+    TbUser login(String email, String password);
 }

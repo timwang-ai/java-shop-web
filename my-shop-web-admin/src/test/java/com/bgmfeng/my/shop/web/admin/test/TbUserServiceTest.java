@@ -7,6 +7,7 @@ import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+import org.springframework.util.DigestUtils;
 
 import java.util.List;
 
@@ -37,7 +38,7 @@ public class TbUserServiceTest {
         tbUser.setUsername("Kevin");
         tbUser.setPassword("Tim");
 
-        tbUserService.insert(tbUser);
+        tbUserService.save(tbUser);
     }
 
     @Test
@@ -59,6 +60,11 @@ public class TbUserServiceTest {
         for (TbUser tbUser : tbUsers) {
             System.out.println(tbUser.getUsername());
         }
+    }
+
+    @Test
+    public void testMD5(){
+        System.out.println(DigestUtils.md5DigestAsHex("123456".getBytes()));
     }
 
 }
