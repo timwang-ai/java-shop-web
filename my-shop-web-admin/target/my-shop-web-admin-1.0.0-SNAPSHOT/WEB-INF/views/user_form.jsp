@@ -74,7 +74,7 @@
                         <div class="form-group row">
                             <label for="email" class="col-sm-2 col-form-label">邮箱</label>
                             <div class="col-sm-10">
-                                <form:input cssClass="form-control" path="email" placeholder="请输入邮箱地址"/>
+                                <form:input cssClass="form-control required" path="email" placeholder="请输入邮箱地址"/>
                             </div>
                         </div>
                         <div class="form-group row">

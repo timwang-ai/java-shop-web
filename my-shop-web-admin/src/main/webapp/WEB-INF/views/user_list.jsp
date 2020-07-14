@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt_rt" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <!DOCTYPE html>
 <html>
@@ -75,17 +76,30 @@
                             <a href="/user/from" type="button" class="btn btn-primary btn-sm"><i class="fa fa-plus"></i>新增</a>&nbsp;&nbsp;&nbsp;
                             <a href="#" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>删除</a>&nbsp;&nbsp;&nbsp;
                             <a href="#" type="button" class="btn btn-success btn-sm"><i class="fa fa-upload"></i>导入</a>&nbsp;&nbsp;&nbsp;
-                            <a href="#" type="button" class="btn btn-success btn-sm"><i class="fa fa-download"></i>导出</a>&nbsp;&nbsp;&nbsp;
+                            <a href="#" type="button" class="btn btn-success btn-sm"><i
+                                    class="fa fa-download"></i>导出</a>&nbsp;&nbsp;&nbsp;
                         </div>
+                        <%--                        <div class="row">--%>
+                        <%--                            <form:form action="/user/search" method="post" modelAttribute="tbUser">--%>
+                        <%--                                <div class="col-xs-4">--%>
+                        <%--                                    <div class="input-group input-group-sm" style="width: 150px;">--%>
+                        <%--                                        <form:input path="empty" cssClass="form-control" placeholder="姓名"/>--%>
+                        <%--&lt;%&ndash;                                        <input type="text" name="username" class="form-control" placeholder="姓名">&ndash;%&gt;--%>
+                        <%--                                    </div>--%>
+                        <%--                                </div>--%>
+                        <%--                            </form:form>--%>
+                        <%--                        </div>--%>
                         <div class="card-tools">
-                            <div class="input-group input-group-sm" style="width: 150px;">
-                                <input type="text" name="table_search" class="form-control float-right"
-                                       placeholder="搜索">
-
-                                <div class="input-group-append">
-                                    <button type="submit" class="btn btn-default"><i class="fas fa-search"></i></button>
+                            <%--                            搜索 1.0 版本--%>
+                            <form action="/user/search" method="post">
+                                <div class="input-group input-group-sm" style="width: 150px;">
+                                    <input type="text" name="keyword" class="form-control float-right" placeholder="搜索">
+                                    <div class="input-group-append">
+                                        <button type="submit" class="btn btn-default"><i class="fas fa-search"></i>
+                                        </button>
+                                    </div>
                                 </div>
-                            </div>
+                            </form>
                         </div>
                     </div>
                     <!-- /.card-header -->
@@ -110,9 +124,12 @@
                                     <td>${tbUser.email}</td>
                                     <td><fmt:formatDate value="${tbUser.updated}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                                     <td>
-                                        <a href="#" type="button" class="btn btn-primary btn-sm"><i class="fa fa-search"></i>查看</a>&nbsp;&nbsp;&nbsp;
-                                        <a href="#" type="button" class="btn btn-success btn-sm"><i class="fa fa-edit"></i>编辑</a>&nbsp;&nbsp;&nbsp;
-                                        <a href="#" type="button" class="btn btn-danger btn-sm"><i class="fa fa-trash"></i>删除</a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#" type="button" class="btn btn-primary btn-sm"><i
+                                                class="fa fa-search"></i>查看</a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#" type="button" class="btn btn-success btn-sm"><i
+                                                class="fa fa-edit"></i>编辑</a>&nbsp;&nbsp;&nbsp;
+                                        <a href="#" type="button" class="btn btn-danger btn-sm"><i
+                                                class="fa fa-trash"></i>删除</a>&nbsp;&nbsp;&nbsp;
                                     </td>
                                 </tr>
                             </c:forEach>
