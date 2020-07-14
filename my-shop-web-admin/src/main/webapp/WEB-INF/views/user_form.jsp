@@ -1,5 +1,6 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -68,31 +69,30 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" action="/user/save" method="post">
+                <form:form cssClass="form-horizontal" action="/user/save" method="post" modelAttribute="tbUser">
                     <div class="card-body">
                         <div class="form-group row">
-                            <label for="inputEmail3" class="col-sm-2 col-form-label">邮箱</label>
+                            <label for="email" class="col-sm-2 col-form-label">邮箱</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputEmail3" name="email" placeholder="请输入邮箱地址">
+                                <form:input cssClass="form-control" path="email" placeholder="请输入邮箱地址"/>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputPassword3" class="col-sm-2 col-form-label">密码</label>
+                            <label for="password" class="col-sm-2 col-form-label">密码</label>
                             <div class="col-sm-10">
-                                <input type="password" class="form-control" id="inputPassword3" name="password" placeholder="请输入用户登陆密码">
+                                <form:password cssClass="form-control" path="password" placeholder="请输入用户登陆密码"/>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputUsername" class="col-sm-2 col-form-label">姓名</label>
+                            <label for="username" class="col-sm-2 col-form-label">姓名</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputUsername" name="username"
-                                       placeholder="请输入用户的姓名">
+                                <form:input cssClass="form-control" path="username" placeholder="请输入用户的姓名"/>
                             </div>
                         </div>
                         <div class="form-group row">
-                            <label for="inputPhone" class="col-sm-2 col-form-label">手机</label>
+                            <label for="phone" class="col-sm-2 col-form-label">手机</label>
                             <div class="col-sm-10">
-                                <input type="text" class="form-control" id="inputPhone" name="phone" placeholder="请输入用户的手机号">
+                                <form:input cssClass="form-control" path="phone" placeholder="请输入用户的手机号"/>
                             </div>
                         </div>
                     </div>
@@ -102,7 +102,7 @@
                         <button type="submit" class="btn btn-info float-right">提交</button>
                     </div>
                     <!-- /.card-footer -->
-                </form>
+                </form:form>
             </div>
             <!-- /.card -->
         </section>
