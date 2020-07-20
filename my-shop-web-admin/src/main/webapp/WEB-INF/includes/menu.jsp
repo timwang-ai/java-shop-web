@@ -27,7 +27,7 @@
                     <a href="/main" class="nav-link active">
                         <i class="nav-icon fas fa-tachometer-alt"></i>
                         <p>
-                            用户管理
+                            测试管理
                             <i class="right fas fa-angle-left"></i>
                         </p>
                     </a>
@@ -35,19 +35,19 @@
                         <li class="nav-item">
                             <a href="/main" class="nav-link ">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>用户信息</p>
+                                <p>测试信息</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/user/list" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>用户列表</p>
+                                <p>测试列表</p>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a href="/user/from" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
-                                <p>新增用户</p>
+                                <p>测试用户</p>
                             </a>
                         </li>
                     </ul>
